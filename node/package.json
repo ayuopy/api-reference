@@ -1,0 +1,21 @@
+{
+  "name": "crud-example",
+  "version": "1.0.0",
+  "description": "an example crud app",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2",
+    "request": "^2.81.0"
+  },
+  "dependencies": {
+    "crypto": "0.0.3",
+    "express": "^4.15.3",
+    "pg": "^7.0.1"
+  }
+}
