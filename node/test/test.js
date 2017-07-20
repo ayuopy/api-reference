@@ -12,7 +12,8 @@ describe('Token', () => {
 	});
 	describe('!userExists', () => {
 		it('is 16 bytes', (done) => {
-			request('http://localhost:8000/token/000', (err, resp, body) => {
+			const randomuser = Math.floor(Math.random() * 100000000);
+			request(`http://localhost:8000/token/${randomuser}`, (err, resp, body) => {
 				expect(body.length).to.equal(32);
 				done();
 			})
