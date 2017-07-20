@@ -3,21 +3,18 @@ const request = require('request');
 
 describe('Token', () => {
 	describe('userExists', () => {
-		it('returns "User already exists"', () => {
+		it('returns "User already exists"', (done) => {
 			request('http://localhost:8000/token/test', (err, resp, body) => {
-				expect(body).to.equal('User already exists');
+				expect(body).to.equal('Token already issued');
+				done();
 			});
 		});
 	});
 	describe('!userExists', () => {
-		it('Is a string', () => {
-			request('http://localhost:8000/token/duncan', (err, resp, body) => {
-				assert.equal(typeof(body), string);
-			});
-		});
-		it('Is 64 bytes', () => {
-			request('http://localhost:8000/token/james', (err, resp, body) => {
-				assert.equal(len(body), 64);
+		it('is 16 bytes', (done) => {
+			request('http://localhost:8000/token/000', (err, resp, body) => {
+				expect(body.length).to.equal(32);
+				done();
 			})
 		})
 	});
